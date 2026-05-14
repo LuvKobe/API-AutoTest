@@ -44,17 +44,37 @@ import requests
 # r = requests.request(url=url, params=params, headers=header, method='GET')
 # print(r.json())
 
+# '''
+#     博客系统登录接口
+#     POST 表单格式
+# '''
+#
+# url = "http://121.196.200.210:8080/user/login"
+#
+# data = {
+#     "userName": "zhangsan",
+#     "password": "123456"
+# }
+#
+# r = requests.request(method="POST",url=url, data=data)
+# print(r.json())
+
 '''
-    博客系统登录接口
-    POST 表单格式
+    博客园用户详情页
+    添加用户登录凭证--cookie（.Cnblogs.AspNetCore.Cookies）
 '''
 
-url = "http://121.196.200.210:8080/user/login"
+url = "https://account.cnblogs.com/user/userinfo"
 
-data = {
-    "userName": "zhangsan",
-    "password": "123456"
+cookie = {
+    ".Cnblogs.AspNetCore.Cookies":"CfDJ8OBZrxGJLy5MvghieKIKXCxbUmIkNTWX8sFnVgjSYCK2xJeRRRkWqJpqml3XWNmu3h_h2ZF3JQfhpPEwc8yqABU5rTqRfr-02D0yGdZBQaGyWq2-ArdENUlfGM81xX6aGUq3rcpt84qAyN0ybJF9ZR5VSiedSoHJJV8VXFvsUSJkWiHbdITWfR0ZpmxvcGkEsxMDu0lYKxcn_BdaSC-RgZyOLM9KX28IgLqwHXcw-Js-YjSYZT68CpMs6awhj8wmxzRxztaHetu_zZHq-zevyw_N9037Z6XNfBTox8M_bManwl5oV6dY8G9PrhKbadQIfvvX-AKP8mZLLyCVvUDooEGWLYgCb1wyc9FBWMua0y-96Sf2rv_-RBsJPZFCR0EuHlWoHqvct7fa2Z9JdnAMFzUdjc0Yv3coRcwRg8k2n-72RsgMLCy7BmYe0puqFS8QqGNrpCcUOOkIO85-aNr0fbywN1ErrMdx283X7B8ROPTtJ8vr_AsDFItcPUdLiZFBzVnWibu-UWJ5vGGl-WdnkEch46v1NaqYjDkOBzE-NmM5hB9ZKHeVmMlHNIFNzaQAHA;"
 }
 
-r = requests.request(method="POST",url=url, data=data)
-print(r.json())
+r = requests.request(method="GET",url=url,cookies=cookie)
+
+
+print(r.text)
+
+
+def test_01():
+    print("test01_test_01")
