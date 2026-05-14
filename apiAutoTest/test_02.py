@@ -23,13 +23,17 @@ from bs4 import BeautifulSoup
 #     def test_a(self):
 #         print("-----test_a----")
 
-class Test():
+# class Test():
+#
+#     def test01(self):
+#         url = "http://121.196.200.210:8080/user/login"
+#         data = {
+#             "userName": "zhangsan",
+#             "password": "123456"
+#         }
+#         r = requests.request(method="POST",url=url, data=data)
+#         print(r.json())
 
-    def test01(self):
-        url = "http://121.196.200.210:8080/user/login"
-        data = {
-            "userName": "zhangsan",
-            "password": "123456"
-        }
-        r = requests.request(method="POST",url=url, data=data)
-        print(r.json())
+class Test02():
+    def test_02(self):
+        print("Test02类里面的test_02方法")
