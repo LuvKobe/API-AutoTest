@@ -28,18 +28,33 @@ import requests
     带有参数
 '''
 
-url = "http://121.196.200.210:8080/blog/getBlogMessage"
+# url = "http://121.196.200.210:8080/blog/getBlogMessage"
+#
+# # 定义查询参数
+# params = {
+#     "blogId": 2
+# }
+#
+# # 定义请求头信息
+# header = {
+#     "usertokenheader":"eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwidXNlck5hbWUiOiJ6aGFuZ3NhbiIsImV4cCI6MTc3ODc1MTE5M30.atkDG3UYE7IPxjQd7HwQNrVsy5Y89uhVLMWBIBnPaAg"
+# }
+#
+# # 使用GET方式请求
+# r = requests.request(url=url, params=params, headers=header, method='GET')
+# print(r.json())
 
-# 定义查询参数
-params = {
-    "blogId": 2
+'''
+    博客系统登录接口
+    POST 表单格式
+'''
+
+url = "http://121.196.200.210:8080/user/login"
+
+data = {
+    "userName": "zhangsan",
+    "password": "123456"
 }
 
-# 定义请求头信息
-header = {
-    "usertokenheader":"eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwidXNlck5hbWUiOiJ6aGFuZ3NhbiIsImV4cCI6MTc3ODc1MTE5M30.atkDG3UYE7IPxjQd7HwQNrVsy5Y89uhVLMWBIBnPaAg"
-}
-
-# 使用GET方式请求
-r = requests.request(url=url, params=params, headers=header, method='GET')
+r = requests.request(method="POST",url=url, data=data)
 print(r.json())
