@@ -72,9 +72,4 @@ cookie = {
 
 r = requests.request(method="GET",url=url,cookies=cookie)
 
-
 print(r.text)
-
-
-def test_01():
-    print("test01_test_01")
