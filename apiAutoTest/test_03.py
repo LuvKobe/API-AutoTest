@@ -13,3 +13,6 @@ class Test03:
 
     def test_03(self):
         print("Test03类里面的test_03方法")
+
+    def test_04(self):
+        print("Test03类里面的test_04方法")
